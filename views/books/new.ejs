@@ -1,0 +1,43 @@
+<!-- views/books/new.ejs -->
+
+<!--
+  Listing 19.1 (p. 277)
+  사용자 생성 구축
+-->
+
+<main class="">
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="pt-5">
+      <h1>Add New Book</h1>
+      <p>What is your Favorite book?</p>
+
+      <div class="row">
+        <div class="col-lg-6 mb-3 mt-3">
+          <div class="data-form">
+            <form action="/books/create" method="POST">
+              <h2 class="form-signin-heading">Create a new book:</h2>
+              <label for="inputTitle">Title</label>
+              <input type="text" name="title" id="inputTitle" class="form-control" placeholder="Title" autofocus>
+              <label for="inputProducer">author</label>
+              <input type="text" name="author" id="inputProducer" class="form-control" placeholder="author">
+              <label for="inputGenre">Genre</label>
+              <input type="text" name="genre" id="inputGenre" class="form-control" placeholder="Genre" required>
+              <label for="inputImage">Image</label>
+              <input type="text" name="image" id="inputImage" class="form-control" placeholder="Image" required>
+              <label for="inputWords">One Words</label>
+              <textarea rows="3" name="one_words" id="inputWords" class="form-control" placeholder="One Words" required>
+              </textarea>
+              <br /><button class="btn btn-lg ut-red" type="submit">Create Book</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-lg-6 text-center text-lg-start mb-3 mt-5">
+          <figure>
+            <img src="https://cdn.pixabay.com/photo/2015/06/02/12/59/book-794978_1280.jpg" />
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

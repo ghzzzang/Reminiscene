@@ -1,0 +1,36 @@
+<!-- views/partials/header.ejs -->
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <div class="container-left">
+      <!-- 로고 -->
+      <figure class="logo">
+        <a href="/">
+          <h1 class="site-title">
+            <span class="text-primary" style="font-size:2rem; font-weight: 900;">Reminiscence</span>
+          </h1>
+        </a>
+      </figure>
+
+      <!-- 메뉴 -->
+      <%- include('_navigation.ejs') %>
+
+
+        <!-- loggedIn 코드 -->
+
+        <% if (loggedIn) { %>
+          <span>Logged In as</span>
+          <a class="btn btn-outline-secondary" href=" <%= `/users/${currentUser._id}` %>">
+            <%= currentUser.fullName %>
+          </a>
+          <a class="btn btn-danger" href="/users/logout">Log Out</a>
+
+          <% } else { %>
+            <a class="btn btn-outline-secondary" href="/users/login">Log In</a>
+            <a class="btn btn-danger" href="/users/new">Register</a>
+            <% } %>
+
+    </div>
+  </div>
+</header>

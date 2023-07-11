@@ -1,0 +1,91 @@
+<!-- views/books/show.ejs -->
+
+
+<main class="user-profile">
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="pt-5">
+      <h1>Book Data for <%= book.title %>
+      </h1>
+
+      <div class="row">
+        <div class="col col-lg-2">
+          <figure class="user-img mt-5 mb-5">
+            <img src="<%= book.image || " https://via.placeholder.com/150" %>" alt="Placeholder image" class="rounded
+            mx-auto d-block"/>
+          </figure>
+        </div>
+        <div class="col col-lg-10">
+          <table class="table table-striped table-hover mt-5 mb-5">
+            <!-- 사용자 데이터를 보여주기 위한 테이블 추가 -->
+            <tbody>
+              <tr>
+                <th>제목</th>
+                <td>
+                  <%= book.title %>
+                </td>
+              </tr>
+              <tr>
+                <th>작가</th>
+                <td>
+                  <%= book.author%>
+                </td>
+              </tr>
+              <tr>
+                <th>장르</th>
+                <td>
+                  <%= book.genre%>
+                </td>
+              </tr>
+              <tr>
+                <th>책에서의 한 문장</th>
+                <td>
+                  <%= book.one_words%>
+                </td>
+              </tr>
+              <tr>
+                <th scope="col">Created</th>
+                <td colspan="2">
+                  <%= book.createdAt %>
+                </td>
+              </tr>
+              <tr>
+                <th scope="col">Updated</th>
+                <td colspan="2">
+                  <%= book.updatedAt %>
+                </td>
+              </tr>
+              <tr>
+                <th scope="col">ID</th>
+                <td colspan="2">
+                  <%= book._id %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!--
+        Listing 20.10 (p. 299)
+        CRUD 액션을 위한 링크 추가
+      -->
+      <div class="row">
+        <div class="col col-lg-10 offset-lg-2">
+          <!-- 프로필 페이지에서 사용자 계정의 편집 및 삭제를 위한 링크 추가 -->
+          <a href="/books" class="btn btn-primary">← Back to Games</a>
+          <a href="/books/<%= book._id %>/edit" class="btn btn-secondary" role="button">✏️ Edit Book</a>
+          <a href="/books/<%= book._id %>/delete?_method=DELETE"
+            onclick="return confirm('Are you sure you want to delete this record?')" class="btn btn-danger disabled"
+            role="button" aria-disabled="true">🗑️ Delete Book</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="user_input_wrap review_product_wrap">
+      <div class="form_fields">
+
+      </div>
+    </div>
+
+  </div>
+</main>
